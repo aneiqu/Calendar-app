@@ -1,0 +1,15 @@
+.calendar-tile{
+    height: 150px;
+    width: 150px;
+    border: .5px solid black;
+    margin-left: -1px;
+    margin-top: -1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+.tile-data{
+    width: min-content;
+}

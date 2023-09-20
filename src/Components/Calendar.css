@@ -1,0 +1,7 @@
+.calendar-container{
+    width: 56vw;
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
