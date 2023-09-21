@@ -1,0 +1,9 @@
+.tile-note{
+    height: 20px;
+    width: 20px;
+    background-color: red;
+    border-radius: 100% ;
+    border: 0.2px solid black;
+    margin-left: -15px;
+    pointer-events: none;
+}

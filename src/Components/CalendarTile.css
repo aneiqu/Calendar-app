@@ -1,15 +1,38 @@
 .calendar-tile{
-    height: 150px;
-    width: 150px;
+    height: 105px;
+    width: 105px;
     border: .5px solid black;
-    margin-left: -1px;
-    margin-top: -1px;
+    margin: 5px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
+    text-align: left;
     flex-direction: column;
+    
 }
 .tile-data{
-    width: min-content;
+    pointer-events: none;
+}
+.hidden{
+    display: none;
+}
+.tile-btn{
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 1px 0.5px black;
+    transition: .2s;
+}
+.tile-btn:active{
+    background-color: rgb(184, 184, 184);
+}
+.tile-note-container{
+    display: flex;
+    width: 100%;
+    margin-left: -25px;
+    max-width: 50px;
+}
+.tile-day{
+    margin-left: 10px;
+    width: 100%;
 }
