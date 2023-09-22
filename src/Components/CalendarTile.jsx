@@ -1,27 +1,36 @@
-import { useState } from "react";
-import TileNote from "./TileNote";
+import { useEffect, useState } from "react";
 import "./CalendarTile.css"
+import TileNoteModal from "./TileNoteModal";
+import TileNote from "./TileNote";
 
-export default function CalendarTile( {fullDay, day} ){
+export default function CalendarTile( {day, fullDate} ){
     const [toggleClass, setToggleClass] = useState("tile-btn hidden")
-    const [tileNotes, setTileNotes] = useState([])
-    function handleEnter(e){
+    const [visible, setVisible] = useState([])
+    const [hidden, setHidden] = useState('tile-data tile-note hidden')
+
+    function handleEnter(){
         setToggleClass("tile-btn")
     }
-    function handleLeave(e){
+    function handleLeave(){
         setToggleClass("tile-btn hidden")
     }
-    function tileAddHandler(e){
-        setTileNotes([...tileNotes, <TileNote key={Math.random()}/>])
+
+    function handleClose(e){
+        setHidden("hidden")
     }
+    function handleOpen(){
+        setHidden("")
+    }
+
 
 
     return(
         <div className="calendar-tile" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
             <p className="tile-data tile-day">{day}</p>
-            <button className={toggleClass} onClick={tileAddHandler}>Add</button>
+            <button className={toggleClass} onClick={handleOpen}>Add</button>
             <div className="tile-data tile-note-container">
-                {tileNotes}
+                <TileNote hidden={visible}/>
+                <TileNoteModal hidden={hidden} handleClose={handleClose} showNote={setVisible} tileDate={fullDate}/>
             </div>
         </div>
     )

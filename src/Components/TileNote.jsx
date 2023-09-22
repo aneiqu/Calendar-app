@@ -1,9 +1,9 @@
 import "./TileNote.css"
 
-export default function TileNote(){
+export default function TileNote( {hidden}){
 
     return(
-        <div className="tile-data tile-note">
+        <div className={hidden}>
         </div>
     )
 }

@@ -1,0 +1,37 @@
+.tile-note-modal-container{
+width: 100vw;
+height: 100vh;
+background-color: rgba(0, 0, 0, 0.774);
+position: absolute;
+top: 0;
+left: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+pointer-events: all;
+}
+.tile-note-modal{
+width: 25vw;
+height: 35vh;
+background-color: white;
+box-shadow: 0px 0px 5px 0.5px white;
+padding: 2px;
+overflow-y: auto;
+}
+.hidden{
+    display: none;
+}
+.nav-btns{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+.modal-btn{
+    height: 10%;
+    width: 17.5%;
+    background-color: white;
+    border: 1px solid black;
+    margin: 3px;
+    border-radius: 5%;
+}

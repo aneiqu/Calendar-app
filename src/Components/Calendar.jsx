@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import './Calendar.css'
 
-import CalendarTile from "./CalendarTile";
-import GhostTile from './GhostTile';
 
 export default function Calendar( {tiles} ){
     const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]

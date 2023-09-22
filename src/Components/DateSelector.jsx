@@ -13,7 +13,6 @@ export default function DateSelector( {returnData} ){
     const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]    
     useEffect(() => {
         setYearMonth(((new Date(date).toLocaleDateString('en-US', {month : 'long'})) + ' ' + (new Date(date).getFullYear().toString())))
-        // console.log(yearMonth)
         const options = { weekday: "long"}
         const ghostTilesRequired = (weekdays.indexOf(new Date(new Date(date).getFullYear(), new Date(date).getMonth(), 1).toLocaleDateString('en-US', options)))
         const ghostTiles = []
@@ -23,7 +22,7 @@ export default function DateSelector( {returnData} ){
 
         const tilesArr = []
         for(let i = 1; i < new Date(new Date(date).getFullYear(), new Date(date).getMonth() + 1, 0).getDate() + 1; i++){
-            tilesArr.push(<CalendarTile key={date.slice(0,-2) + i} day={i}/>)
+            tilesArr.push(<CalendarTile key={date.slice(0,-2) + i} day={i} fullDate={new Date(new Date(date).getFullYear(), new Date(date).getMonth() + 1, i).toLocaleDateString('en-US')}/>)
         }
         returnData(ghostTiles.concat(tilesArr))
     }, [date])

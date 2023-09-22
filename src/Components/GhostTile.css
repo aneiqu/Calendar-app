@@ -1,6 +1,6 @@
 .ghost-tile{
     height: 105px;
     width: 105px;
-    border: .5px solid white;
+    border: .5px solid transparent;
     margin: 5px;
 }
