@@ -1,15 +1,15 @@
 import "./Event.css"
 
-export default function Event( {content, remove} ){
+export default function Event( {content, remove, eventKey} ){
 
     function handleRemove(e){
-        remove(e.target.parentNode.textContent)
+        remove(eventKey + "")
     }
     
     return(
-        <div className="event-container">
-            <p>{content}</p>
-            <button onClick={e => handleRemove(e)}>Remove</button>
+        <div className={"event-container" + " " + eventKey}>
+            <p className="event-content">{content}</p>
+            <button className="remove-btn" onClick={e => handleRemove(e)}>Remove</button>
         </div>
     )
 }

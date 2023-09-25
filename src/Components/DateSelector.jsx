@@ -22,7 +22,8 @@ export default function DateSelector( {returnData} ){
 
         const tilesArr = []
         for(let i = 1; i < new Date(new Date(date).getFullYear(), new Date(date).getMonth() + 1, 0).getDate() + 1; i++){
-            tilesArr.push(<CalendarTile key={date.slice(0,-2) + i} day={i} fullDate={new Date(new Date(date).getFullYear(), new Date(date).getMonth() + 1, i).toLocaleDateString('en-US')}/>)
+            const fullDate =  new Date(new Date(date).getFullYear(), new Date(date).getMonth(), i).toLocaleDateString('en-US')
+            tilesArr.push(<CalendarTile key={date.slice(0,-2) + i} day={i} today={fullDate === today.toLocaleDateString('en-US') ? 'today' : ''} fullDate={fullDate}/>)
         }
         returnData(ghostTiles.concat(tilesArr))
     }, [date])

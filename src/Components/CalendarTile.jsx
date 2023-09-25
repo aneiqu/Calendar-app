@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./CalendarTile.css"
 import TileNoteModal from "./TileNoteModal";
 import TileNote from "./TileNote";
 
-export default function CalendarTile( {day, fullDate} ){
+export default function CalendarTile( {day, fullDate, today} ){
     const [toggleClass, setToggleClass] = useState("tile-btn hidden")
     const [visible, setVisible] = useState([])
     const [hidden, setHidden] = useState('tile-data tile-note hidden')
@@ -25,7 +25,7 @@ export default function CalendarTile( {day, fullDate} ){
 
 
     return(
-        <div className="calendar-tile" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
+        <div className={'calendar-tile' + ' ' + today + " " + fullDate} onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
             <p className="tile-data tile-day">{day}</p>
             <button className={toggleClass} onClick={handleOpen}>Add</button>
             <div className="tile-data tile-note-container">
